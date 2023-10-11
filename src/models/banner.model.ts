@@ -1,15 +1,14 @@
 import mongoose, { Schema } from "mongoose";
 
-const categories = new Schema(
+const banner = new Schema(
   {
-    name: {
-      type: String,
+    thumbnail: {
+      type: Array,
       required: true,
       trim: true,
       unique: true,
       sparse: true,
     },
-    image: String,
     alias: String,
   },
   {
@@ -17,4 +16,4 @@ const categories = new Schema(
   }
 );
 
-export default mongoose.model("categories", categories);
+export default mongoose.model("banner", banner);

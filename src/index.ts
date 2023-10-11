@@ -6,7 +6,7 @@ import { connectToDb, getDb, connectMongoose } from "./config/connectDB";
 import { routes } from "./routes/index";
 // import { apiLimit } from "./services/rateLimit.service";
 const app = express();
-const port = 3000;
+const port = 3005;
 const corsOptions = {
   origin: "http://localhost:8080",
 };
