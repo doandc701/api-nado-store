@@ -8,7 +8,7 @@ import { routes } from "./routes/index";
 const app = express();
 const port = 3005;
 const corsOptions = {
-  origin: "http://localhost:8080",
+  origin: ["http://localhost:8080","http://localhost:9527"],
 };
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

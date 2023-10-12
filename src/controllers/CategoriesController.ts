@@ -4,7 +4,8 @@ import Categories from '../models/category.model'
 async function GET_CATEGORIES(req: Request, res: Response) {
     const page = req.query.p || 0;
     const showLimit: number = 3;
-    Categories.find({}).limit(showLimit).skip(Number(page) * showLimit)
+    // limit(showLimit).skip(Number(page) * showLimit)
+    Categories.find({})
         .then((data) => {
             res.status(200).send(data);
         })
@@ -31,6 +32,7 @@ async function POST_CATEGORIES(req: Request, res: Response) {
 
 
 function PUT_CATEGORIES(req: Request, res: Response) {
+    console.log('req',req)
     Categories.findByIdAndUpdate(req.params.id, req.body)
         .then((data) => {
             res.status(200).send(data);
